@@ -1,0 +1,20 @@
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	font-size: 20px;
+}
+
+body {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+/*
+	За максимальные параметры взяты параметры Iphone 8 plus
+*/
+.wrapper {
+	max-width: 414px;
+	max-height: 736px;
+}
