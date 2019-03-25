@@ -1,0 +1,108 @@
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	font-size: 5vw;
+	font-family: 'Open Sans', sans-serif;
+}
+
+body {
+	color: white;
+}
+
+/*
+	За максимальные параметры взяты параметры Iphone 8 plus
+*/
+
+.wrapper {
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	background-color: #21a5da;
+	justify-content: space-between;
+}
+
+.header {
+	padding: 5vw;
+	background-color: #3eb1df;
+	width: 100%;
+	text-align: center;
+}
+
+.header__date {
+	font-size: 0.7em;
+}
+
+.weather {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 5vw;
+}
+
+.weather__type {
+	font-size: 1.2em;
+	text-align: center;
+}
+
+.days {
+	display: flex;
+	align-items: center;
+	width: 100%;
+	justify-content: center;
+	background-color: #3eb1df;
+}
+
+.days__day {
+	width: 33.3%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 7vw;
+}
+
+.days__date {
+	font-size: 0.6em;
+}
+
+.circle {
+	border-radius: 50%;
+	padding: 12px;
+}
+
+.weather__ico_inner-one {
+	background-color: rgba(99, 187, 222, 0.1);
+}
+
+.weather__ico_inner-two {
+	background-color: rgba(99, 187, 222, 0.3);
+}
+
+.weather__ico_inner-three {
+	background-color: rgba(99, 187, 222, 0.3);
+}
+
+.weather__ico_inner-four {
+	background-color: rgba(99, 187, 222, 0.8);
+}
+
+.weather__ico {
+	position: relative;
+}
+
+.weather__value {
+	font-size: 6em;
+	position: relative;
+}
+
+.weather__value::after {
+	content: '°';
+	position: absolute;
+	top: -30px;
+	right: -40px;
+}
+
+.active {
+	background-color: #1c9dd1;
+}
