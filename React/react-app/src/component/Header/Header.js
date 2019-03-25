@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import HeaderDate from './HeaderDate';
 
 class Header extends Component {
     constructor(props) {
@@ -8,9 +9,7 @@ class Header extends Component {
     render() {
         return (
             <div className="header">
-                <div className="header__date">
-                    Сегодня, 21 апреля 2016
-                </div>
+                <HeaderDate/>
             </div>
         );
     }
