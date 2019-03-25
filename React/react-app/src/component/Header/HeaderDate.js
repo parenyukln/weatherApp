@@ -4,7 +4,7 @@ class HeaderDate extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            time: Date().now()
+            time: Date.now()
         };
         this.interval = '';
     }
