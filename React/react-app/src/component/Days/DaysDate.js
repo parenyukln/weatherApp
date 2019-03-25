@@ -8,7 +8,7 @@ class DaysDate extends Component {
     render() {
         return (
             <div className="days__date">
-                    21 апреля
+                21 апреля
             </div>  
         );
     }

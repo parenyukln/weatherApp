@@ -10,7 +10,9 @@ class App extends Component {
     super(props);
     this.requestUrl = "https://gist.githubusercontent.com/anonymous/feb1b31516f3e36a14b29657701f18d2/raw/eaa544aed7e3bdee37c6caa2a515f1d4c38fbd4f/weather.json";
     this.loadData = this.loadData.bind(this);
-    this.jsonData = '';
+    this.state = {
+      jsonData: null
+    };
     this.loadData();
   }
 
@@ -18,17 +20,20 @@ class App extends Component {
     fetch(this.requestUrl).then( response => {
       if ( response.status === 200 ) {
         return response.json();
-      } 
+      } else {
+        throw new Error('Error loading data...');
+      }
     }).then( body => {
-      this.jsonData = body;
-      console.log(this.jsonData)
+      this.setState({
+          jsonData: body
+      });
     }).catch(alert);
   }
 
   render() {
     return (
       <div className="wrapper">
-        <Header/>
+        <Header data={this.state.jsonData}/>
         <WeatherInfo/>
         <Days/>
       </div>

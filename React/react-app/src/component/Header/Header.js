@@ -9,7 +9,7 @@ class Header extends Component {
     render() {
         return (
             <div className="header">
-                <HeaderDate/>
+                <HeaderDate data={this.props.data} listId="0"/>
             </div>
         );
     }

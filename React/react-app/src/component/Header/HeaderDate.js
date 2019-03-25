@@ -3,24 +3,23 @@ import React, { Component } from 'react';
 class HeaderDate extends Component {
     constructor(props) {
         super(props);
-        this.state = {
-            time: Date.now()
-        };
-        this.interval = '';
+        this.prepareData = this.prepareData.bind(this);
+        this.id = this.props.listId;
+        this.data = this.props.data;
+        this.prepareData();
     }
 
-    componentDidMount() {
-        this.interval = setInterval(() => this.setState({ time: Date.now() }), 1000);
-      }
-
-    componentWillUnmount() {
-        clearInterval(this.interval);
+    prepareData() {
+        let timestamp = this.data.list[this.id].dt;
+        let date = new Date();
+        date.setTime(timestamp);
+        alert( date.getHours() );
     }
 
     render() {
         return (
             <div className="header__date">
-                Сегодня, {this.state.time}
+                    Сегодня, 21 апреля 2016
             </div>
         );
     }
