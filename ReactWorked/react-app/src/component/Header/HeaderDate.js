@@ -37,7 +37,7 @@ class HeaderDate extends Component {
             default:
                 dayName = 'Сегодня'
                 break;
-          }
+        }
 
         return (
             <div className="header__date">

@@ -26,7 +26,6 @@ class WeatherInfo extends Component {
                 weatherValue: this.props.data.list[this.state.activeDay].temp.eve
             });
         } 
-        console.log(this.props.data, this.state.weatherId, this.state.weatherType, this.state.weatherIco, this.state.weatherValue )
     }
 
     render() {

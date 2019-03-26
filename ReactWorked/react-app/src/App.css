@@ -34,6 +34,7 @@ body {
 
 .header__date {
 	font-size: 0.7em;
+	transition: all 0.1s ease-in-out;
 }
 
 .weather {
@@ -41,6 +42,7 @@ body {
 	flex-direction: column;
 	align-items: center;
 	padding: 5vw;
+	transition: all 0.1s ease-in-out;
 }
 
 .weather__type {
@@ -107,6 +109,10 @@ body {
 
 .active {
 	background-color: #1c9dd1;
+}
+
+.transform {
+	transform: translateX(500px);
 }
 
 @media (min-width: 414px) {
