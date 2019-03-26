@@ -3,23 +3,45 @@ import React, { Component } from 'react';
 class HeaderDate extends Component {
     constructor(props) {
         super(props);
-        this.prepareData = this.prepareData.bind(this);
-        this.id = this.props.listId;
-        this.data = this.props.data;
-        this.prepareData();
+        this.id = this.props.activeDay;
+        this.date = this.props.date;
     }
 
-    prepareData() {
-        let timestamp = this.data.list[this.id].dt;
-        let date = new Date();
-        date.setTime(timestamp);
-        alert( date.getHours() );
+    componentDidMount() {
+        const timestamp = this.date;
+        let localDate = new Date();
+        localDate.setTime(timestamp);
+        const options = {
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric',
+          };
+        this.date = localDate.toLocaleString("ru", options)
     }
 
     render() {
+        let dayName = '';
+        switch(this.id) {
+            case '0': 
+                dayName = 'Сегодня' 
+                break;
+          
+            case '1':
+                dayName = 'Завтра'  
+                break;
+
+            case '2': 
+                dayName = 'Послезавтра'  
+                break;
+          
+            default:
+                dayName = 'Сегодня'
+                break;
+          }
+
         return (
             <div className="header__date">
-                    Сегодня, 21 апреля 2016
+                    {dayName}, {this.date}
             </div>
         );
     }

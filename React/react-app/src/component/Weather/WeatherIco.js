@@ -3,6 +3,11 @@ import React, { Component } from 'react';
 class WeatherIco extends Component {
     constructor(props) {
         super(props);
+        this.weatherIco = this.props.weatherIco;
+    }
+
+    componentDidMount() {
+        console.log(this.weatherIco);
     }
 
     render() {

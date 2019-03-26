@@ -9,14 +9,13 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.requestUrl = "https://gist.githubusercontent.com/anonymous/feb1b31516f3e36a14b29657701f18d2/raw/eaa544aed7e3bdee37c6caa2a515f1d4c38fbd4f/weather.json";
-    this.loadData = this.loadData.bind(this);
     this.state = {
-      jsonData: null
+      jsonData: [],
+      activeDay: 0
     };
-    this.loadData();
   }
 
-  loadData() {
+  componentDidMount() {
     fetch(this.requestUrl).then( response => {
       if ( response.status === 200 ) {
         return response.json();
@@ -33,9 +32,9 @@ class App extends Component {
   render() {
     return (
       <div className="wrapper">
-        <Header data={this.state.jsonData}/>
-        <WeatherInfo/>
-        <Days/>
+        <Header data={this.state.jsonData} activeDay={this.state.activeDay}/>
+        <WeatherInfo data={this.state.jsonData} activeDay={this.state.activeDay}/>
+        <Days data={this.state.jsonData} activeDay={this.state.activeDay}/>
       </div>
     );
   }
